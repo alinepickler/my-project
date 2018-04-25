@@ -1,5 +1,7 @@
 import React from "react";
 import { Menu } from "../";
+import "./styles.css";
+
 const additionalMenu = [
   { text: "Pure UI", url: "https://rauchg.com/2015/pure-ui" },
   { text: "Documentation", url: "https://reactjs.org/docs/" },
@@ -16,4 +18,8 @@ const additionalMenu = [
 
 const first = additionalMenu[0];
 
-export const Footer = () => <Menu links={additionalMenu} />;
+export const Footer = () => (
+  <div className="footer">
+    <Menu links={additionalMenu} />
+  </div>
+);
