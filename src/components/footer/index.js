@@ -16,8 +16,6 @@ const additionalMenu = [
   { text: "github", url: "https://github.com/alinepickler/my-project.git" }
 ];
 
-const first = additionalMenu[0];
-
 export const Footer = () => (
   <div className="footer">
     <Menu links={additionalMenu} />

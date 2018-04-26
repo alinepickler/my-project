@@ -8,8 +8,6 @@ const mainMenu = [
   { text: "Submit", url: "https://news.ycombinator.com/submit" }
 ];
 
-const first = mainMenu[0];
-
 export const Header = () => (
   <div className="header">
     <span className="header_logo">
