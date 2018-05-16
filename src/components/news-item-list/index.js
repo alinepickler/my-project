@@ -1,8 +1,9 @@
 import React from "react";
 import { NewsItem } from "../";
-import { api } from "../../utils";
 
-export const NewsItemList = ({ ids }) => {
+export const NewsItemList = props => {
+  const ids = props.ids;
+
   return (
     <ol>
       {ids.map(id => (
