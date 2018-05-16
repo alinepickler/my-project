@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { NewsItemList } from "../";
 import { api } from "../../utils";
 
+const isArraysEqual = (arr1 = [], arr2 = []) =>
+  arr1.toString() === arr2.toString();
+
 export class PageNewsList extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +13,7 @@ export class PageNewsList extends Component {
       ids: undefined
     };
   }
-  componentDidMount() {
+  fetchItems = () => {
     api
       .getItemsIds()
       .then(ids => {
@@ -19,6 +22,12 @@ export class PageNewsList extends Component {
       .catch(err => {
         console.error(err);
       });
+  };
+  shouldComponentUpdate(nextProps, nextState) {
+    return !isArraysEqual(this.state.ids, nextState.ids);
+  }
+  componentDidMount() {
+    this.fetchItems();
   }
   render() {
     const { ids } = this.state;
@@ -27,6 +36,7 @@ export class PageNewsList extends Component {
     }
     return (
       <div>
+        <button onClick={this.fetchItems}>Refresh</button>
         <NewsItemList ids={ids} />
       </div>
     );
