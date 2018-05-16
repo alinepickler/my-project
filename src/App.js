@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import { api } from "./utils";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import {
   Page,
   Header,
   Footer,
   Content,
-  NewsItem,
-  NewsItemList
+  PageNewsList,
+  NewsItem
 } from "./components";
 
 class App extends Component {
@@ -19,11 +18,7 @@ class App extends Component {
             <Header />
             <Content>
               <Switch>
-                <Route
-                  exact
-                  path="/"
-                  render={() => <NewsItemList ids={api.getItemsIds()} />}
-                />
+                <Route exact path="/" component={PageNewsList} />
                 <Route
                   path="/item/:itemId"
                   render={({ match }) => <NewsItem id={match.params.itemId} />}
