@@ -1,5 +1,6 @@
 import React from "react";
 import { NewsItem } from "../";
+import { api } from "../../utils";
 
 export const NewsItemList = ({ ids }) => {
   return (
