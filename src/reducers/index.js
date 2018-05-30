@@ -78,7 +78,7 @@ const itemsReducer = (state = {}, action) => {
 };
 
 const dataReducer = combineReducers({
-  itemsIds: itemsIdsReducer,
+  itemsIds: itemIdsReducer,
   items: itemsReducer
 });
 
