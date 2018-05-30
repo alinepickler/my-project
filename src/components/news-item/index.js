@@ -28,7 +28,7 @@ export class NewsItem extends Component {
     }
     return (
       <div className="item">
-        <h3 classname="title">
+        <h3 className="title">
           <a className="link" href={item.url}>
             {item.title}
           </a>
