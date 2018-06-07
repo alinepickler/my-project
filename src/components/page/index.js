@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import * as ducks from "../../ducks";
 import "./styles.css";
 
 import * as actions from "../../actions";
@@ -11,7 +12,7 @@ export const Page = ({ children, isDarkTheme }) => {
 
 const mapStateToProps = state => {
   return {
-    isDarkTheme: state.ui.isDarkTheme
+    isDarkTheme: ducks.ui.selectors.isDarkTheme(state)
   };
 };
 
