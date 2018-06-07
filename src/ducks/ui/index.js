@@ -52,3 +52,14 @@ export const rawReducer = (state = defaultState, action) => {
 export const reducer = {
   [ns]: rawReducer
 };
+
+export default {
+  ns,
+  shape,
+  defaultState,
+  selectors,
+  types,
+  actions,
+  rawReducer,
+  reducer
+};
