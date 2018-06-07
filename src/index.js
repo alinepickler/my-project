@@ -11,7 +11,6 @@ import * as ducks from "./ducks";
 
 const rootReducer = combineReducers({
   data: dataReducer,
-  ui: uiReducer,
   ...ducks.ui.reducer
 });
 
