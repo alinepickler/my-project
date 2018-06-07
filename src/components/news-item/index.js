@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import * as actions from "../../actions";
 import PropTypes from "prop-types";
 import { distanceInWordsToNow } from "date-fns";
 import { Link } from "react-router-dom";
+import * as ducks from "../../ducks";
 import "./styles.css";
 
 class NewsItem extends Component {
@@ -48,12 +48,14 @@ NewsItem.propTypes = {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    item: (state.data.items[ownProps.id] || {}).item
+    item: (state.data.items[ownProps.id] || {}).item,
+    item2: ducks.data.selectors.item(state, ownProps.id)
   };
 };
 
 const mapDispatchToProps = {
-  fetchItem: actions.fetchItem
+  //fetchItem: actions.fetchItem,
+  fetchItem: ducks.data.actions.fetchItem
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewsItem);

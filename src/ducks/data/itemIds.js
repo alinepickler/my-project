@@ -3,13 +3,13 @@ import { api } from "../../utils";
 
 const ns = "itemsIds";
 
-const shape = {
+const shape = {};
+
+const defaultState = {
   ids: [],
   isLoading: false,
   error: null
 };
-
-const defaultState = {};
 
 const root = state => state[ns];
 
@@ -61,7 +61,7 @@ const actions = {
 
 const stringifyErr = err => err.toString();
 
-const rawReducer = (state = dataItemsIdsInitialState, action) => {
+const rawReducer = (state = defaultState, action) => {
   switch (action.type) {
     case types.start:
       return { ...state, isLoading: true };
