@@ -11,8 +11,7 @@ import * as ducks from "./ducks";
 
 const rootReducer = combineReducers({
   ...ducks.ui.reducer,
-  ...ducks.data.reducer,
-  data: dataReducer
+  ...ducks.data.reducer
 });
 
 const store = createStore(
