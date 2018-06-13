@@ -10,9 +10,9 @@ import { Provider } from "react-redux";
 import * as ducks from "./ducks";
 
 const rootReducer = combineReducers({
-  data: dataReducer,
   ...ducks.ui.reducer,
-  ...ducks.data.reducer
+  ...ducks.data.reducer,
+  data: dataReducer
 });
 
 const store = createStore(

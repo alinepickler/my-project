@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import itemsIds from "./itemIds";
+import itemsIds from "./itemsIds";
 import items from "./items";
 import { mapObj, augmentSelectorWith } from "../../utils";
 
-export const ns = "data";
+export const ns = "data-duck";
 
 const root = state => state[ns];
 export const selectors = {
